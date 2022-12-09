@@ -1,4 +1,8 @@
 .personal--info-container {
   width: 45rem;
   height: 37.2rem;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  justify-content: space-between;
 }
