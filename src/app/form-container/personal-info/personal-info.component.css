@@ -21,9 +21,6 @@
   padding-bottom: 4rem;
 }
 
-.personal--info-form {
-}
-
 .personal--info-label {
   font-size: 1.4rem;
   font-weight: 400;
@@ -98,4 +95,24 @@
 .btn-primary {
   background: #022959;
   color: white;
+}
+
+/* ERRORS */
+
+.ng-valid[required],
+.ng-valid.required {
+  border-left: 5px solid #42a948; /* green */
+}
+
+.ng-invalid:not(form) {
+  border-left: 5px solid #a94442; /* red */
+}
+
+.alert div {
+  color: #820000;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
 }

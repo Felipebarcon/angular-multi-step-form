@@ -1,60 +1,85 @@
-<div class="personal--info-container">
+<form
+  [formGroup]="personalInfoForm"
+>
+  <div class="personal--info-container">
 
-  <div class="personal--info-title">
-    <h2>Personal info</h2>
-    <p>Please provide your name, email address, and phone number.</p>
-  </div>
-
-  <div class="personal--info-form">
-
-    <div class="form--name">
-      <label
-        class="personal--info-label"
-        for="name"
-      >Name</label>
-      <input
-        class="personal--info-input"
-        id="name"
-        name="name"
-        placeholder="e.g. Stephen King"
-        type="text"
-      >
+    <div class="personal--info-title">
+      <h2>Personal info</h2>
+      <p>Please provide your name, email address, and phone number.</p>
     </div>
 
-    <div class="form--email">
+    <div class="personal--info-form">
 
-      <label
-        class="personal--info-label"
-        for="email"
-      >Email Address</label>
-      <input
-        class="personal--info-input"
-        id="email"
-        placeholder="e.g. stephenking@lorem.com"
-        type="email"
+      <div class="form--name">
+        <label
+          class="personal--info-label"
+        >Name</label>
+        <input
+          class="personal--info-input"
+          formControlName="name"
+          placeholder="e.g. Stephen King"
+          type="text"
+        >
+      </div>
+      <div
+        *ngIf="name!.invalid && (name!.dirty || name!.touched)"
+        class="alert"
       >
+        <div *ngIf="name!.errors?.['required']">
+          Name is required.
+        </div>
+      </div>
+
+      <div class="form--email">
+        <label
+          class="personal--info-label"
+        >Email Address</label>
+        <input
+          class="personal--info-input"
+          formControlName="email"
+          placeholder="e.g. stephenking@lorem.com"
+          type="email"
+        >
+      </div>
+      <div
+        *ngIf="email!.invalid && (email!.dirty || email!.touched)"
+        class="alert"
+      >
+        <div *ngIf="email!.errors?.['required']">
+          Email is required.
+        </div>
+      </div>
+
+      <div class="form--phone">
+        <label
+          class="personal--info-label"
+        >Phone Number</label>
+        <input
+          class="personal--info-input"
+          formControlName="phone"
+          placeholder="e.g. +1 234 567 890"
+          type="tel"
+        >
+      </div>
+      <div
+        *ngIf="phone!.invalid && (phone!.dirty || phone!.touched)"
+        class="alert"
+      >
+        <div *ngIf="phone!.errors?.['required']">
+          Phone is required.
+        </div>
+      </div>
+
     </div>
 
-    <div class="form--phone">
+    <div class="form--buttons">
+      <button
+        class="btn btn-primary"
+      >Next Step
+      </button>
 
-      <label
-        class="personal--info-label"
-        for="phone"
-      >Phone Number</label>
-      <input
-        class="personal--info-input"
-        id="phone"
-        placeholder="e.g. +1 234 567 890"
-        type="tel"
-      >
     </div>
 
   </div>
-  <div class="form--buttons">
-    <button
-      class="btn btn-primary"
-      type="submit"
-    >Next Step
-    </button>
-  </div>
-</div>
+</form>
+
