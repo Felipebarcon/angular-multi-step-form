@@ -11,9 +11,23 @@
     <div class="personal--info-form">
 
       <div class="form--name">
-        <label
-          class="personal--info-label"
-        >Name</label>
+
+        <div class="form--label-error">
+          <label
+            class="personal--info-label"
+          >Name</label>
+
+          <!-- Error Handling -->
+          <div
+            *ngIf="name!.invalid && (name!.dirty || name!.touched)"
+            class="alert"
+          >
+            <div *ngIf="name!.errors?.['required']">
+              Name is required.
+            </div>
+          </div>
+        </div>
+
         <input
           class="personal--info-input"
           formControlName="name"
@@ -21,19 +35,25 @@
           type="text"
         >
       </div>
-      <div
-        *ngIf="name!.invalid && (name!.dirty || name!.touched)"
-        class="alert"
-      >
-        <div *ngIf="name!.errors?.['required']">
-          Name is required.
-        </div>
-      </div>
 
       <div class="form--email">
-        <label
-          class="personal--info-label"
-        >Email Address</label>
+
+        <div class="form--label-error">
+          <label
+            class="personal--info-label"
+          >Email Address</label>
+
+          <!-- ERROR HANDLING -->
+          <div
+            *ngIf="email!.invalid && (email!.dirty || email!.touched)"
+            class="alert"
+          >
+            <div *ngIf="email!.errors?.['required']">
+              Email is required.
+            </div>
+          </div>
+        </div>
+
         <input
           class="personal--info-input"
           formControlName="email"
@@ -41,33 +61,32 @@
           type="email"
         >
       </div>
-      <div
-        *ngIf="email!.invalid && (email!.dirty || email!.touched)"
-        class="alert"
-      >
-        <div *ngIf="email!.errors?.['required']">
-          Email is required.
-        </div>
-      </div>
 
       <div class="form--phone">
-        <label
-          class="personal--info-label"
-        >Phone Number</label>
+
+        <div class="form--label-error">
+          <label
+            class="personal--info-label"
+          >Phone Number</label>
+
+          <!-- ERROR HANDLING -->
+
+          <div
+            *ngIf="phone!.invalid && (phone!.dirty || phone!.touched)"
+            class="alert"
+          >
+            <div *ngIf="phone!.errors?.['required']">
+              Phone is required.
+            </div>
+          </div>
+        </div>
+        
         <input
           class="personal--info-input"
           formControlName="phone"
           placeholder="e.g. +1 234 567 890"
           type="tel"
         >
-      </div>
-      <div
-        *ngIf="phone!.invalid && (phone!.dirty || phone!.touched)"
-        class="alert"
-      >
-        <div *ngIf="phone!.errors?.['required']">
-          Phone is required.
-        </div>
       </div>
 
     </div>

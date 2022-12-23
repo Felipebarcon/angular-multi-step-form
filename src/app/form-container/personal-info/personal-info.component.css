@@ -44,18 +44,10 @@
   padding-bottom: 2.4rem;
 }
 
-.form--name label {
-  padding-bottom: 0.8rem;
-}
-
 .form--email {
   display: flex;
   flex-direction: column;
   padding-bottom: 2.4rem;
-}
-
-.form--email label {
-  padding-bottom: 0.8rem;
 }
 
 .form--phone {
@@ -64,8 +56,10 @@
   padding-bottom: 2.4rem;
 }
 
-.form--phone label {
+.form--label-error {
   padding-bottom: 0.8rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 ::placeholder {
@@ -99,20 +93,12 @@
 
 /* ERRORS */
 
-.ng-valid[required],
-.ng-valid.required {
-  border-left: 5px solid #42a948; /* green */
-}
-
 .ng-invalid:not(form) {
   border-left: 5px solid #a94442; /* red */
 }
 
 .alert div {
+  font-size: 1.4rem;
   color: #820000;
-  margin-bottom: 1rem;
-}
-
-.form-group {
   margin-bottom: 1rem;
 }
