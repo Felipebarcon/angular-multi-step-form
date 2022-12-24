@@ -6,7 +6,9 @@ import { FormContainerComponent } from './form-container/form-container.componen
 import { StepComponent } from './form-container/step/step.component';
 import { PersonalInfoComponent } from './form-container/personal-info/personal-info.component';
 import { ReactiveFormsModule, Validators } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { SelectPlanComponent } from './form-container/select-plan/select-plan.component';
+import { RouterModule } from '@angular/router';
+import { APP_ROUTES } from './app.routes';
 
 @NgModule({
   declarations: [
@@ -14,8 +16,13 @@ import { HttpClientModule } from '@angular/common/http';
     FormContainerComponent,
     StepComponent,
     PersonalInfoComponent,
+    SelectPlanComponent,
   ],
-  imports: [BrowserModule, ReactiveFormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    ReactiveFormsModule,
+    RouterModule.forRoot(APP_ROUTES),
+  ],
   providers: [Validators],
   bootstrap: [AppComponent],
 })
