@@ -94,11 +94,12 @@
 /* ERRORS */
 
 .ng-invalid:not(form) {
-  border-left: 5px solid #a94442; /* red */
+  border: 1px solid #a94442;
 }
 
 .alert div {
   font-size: 1.4rem;
   color: #820000;
+  font-weight: 500;
   margin-bottom: 1rem;
 }

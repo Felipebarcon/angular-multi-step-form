@@ -72,7 +72,7 @@
           <!-- ERROR HANDLING -->
 
           <div
-            *ngIf="phone!.invalid && (phone!.dirty || phone!.touched)"
+            *ngIf="phone!.invalid"
             class="alert"
           >
             <div *ngIf="phone!.errors?.['required']">
@@ -80,7 +80,7 @@
             </div>
           </div>
         </div>
-        
+
         <input
           class="personal--info-input"
           formControlName="phone"
@@ -94,6 +94,7 @@
     <div class="form--buttons">
       <button
         class="btn btn-primary"
+        routerLink="selectplan"
       >Next Step
       </button>
 

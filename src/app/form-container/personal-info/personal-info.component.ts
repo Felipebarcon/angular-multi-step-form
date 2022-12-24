@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-personal-info',
@@ -13,7 +14,10 @@ export class PersonalInfoComponent implements OnInit {
     phone: ['', Validators.required],
   });
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   get name() {
     return this.personalInfoForm.get('name');
